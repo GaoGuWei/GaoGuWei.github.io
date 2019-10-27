@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-用Hexo搭建一个静态博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/26/%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time datetime="2019-10-26T11:55:00.000Z" itemprop="datePublished">2019-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/26/%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">用Hexo搭建一个静态博客框架</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>hh,欢迎点进来。如果你能找到这篇博客，说明你已经成功了一半。毕竟，我在知道要写博客，到真正动手写博客，就花了1/2的时间。</p>
+<p>好了，话不多说，先让我们来看一段视频。</p>
+<iframe  src="//player.bilibili.com/player.html?aid=44544186&cid=77981994&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">视频链接</a>
+
+<p>如果你有一定的编程基础，相信根据这个视频你就已经能搭建出一个自己的博客框架啦。如果你已经搭出了框架，可以跳过下面的笔记文字。</p>
+<hr>
+<p>下面，我就根据这个视频来做一个笔记吧。我用的是Windows10系统，有一些地方和视频会有不同。</p>
+<p>首先，你需要的工具有：Node.js、Hexo、github账户<br><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Nodejs下载链接</a><br><a href="https://github.com" target="_blank" rel="noopener">GitHub网站链接</a></p>
+<hr>
+<p>Step 1：在终端中，用npm安装cnpm镜像源（因为谷歌安装插件是从国外服务器下载，受网络影响大，可能出现异常，所以我们用淘宝的。）。接着用cnpm安装hexo软件，安装git插件。</p>
+<p>在常用软件中搜索 cmd 即可打开终端（Mac系统是item）【大概长这样：<br><img src="/images/02/cmd.png" alt="Windows10系统下的终端"></p>
+<p>安装cnpm镜像源代码：<br>npm install -g cnpm –registry-<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<p>安装hexo代码：<br>cnpm install -g hexo-cli</p>
+<p>安装git插件代码：<br>cnpm install –save hexo-deployer-git</p>
+<hr>
+<p>Step 2：创建一个文件夹。把所有的编辑内容，都放在这一个文件夹里，如果错了，删除该文件夹就好了。我建在了D盘里。打开D盘blog文件夹，用hexo初始化一个blog。<br><img src="/images/02/blog.png" alt="D盘blog文件夹"></p>
+<p>创建文件夹代码：<br>mkdir blog</p>
+<p>初始化hexo代码：<br>hexo init</p>
+<hr>
+<p>Step 3: hexo里的基本操作。本地查看博客，可以打开任意浏览器，输入：localhost:4000</p>
+<p>写一篇博文的代码：<br>hexo n “My name is CowryGao”</p>
+<p>在本地启动博客的代码：<br>hexo s<br>【退出ctrl+c】</p>
+<p>生成博文的代码：<br>hexo g</p>
+<p>部署博客到远端的代码：<br>hexo d</p>
+<p>清理本地代码：<br>hexo clean</p>
+<hr>
+<p>Step 4: 将本地博客部署到GitHub上。如果你还没有GitHub，戳下面链接，创建一个吧。<br><a href="https://github.com" target="_blank" rel="noopener">https://github.com</a><br>在GitHub里创建一个仓库，仓库名就是以后访问你的博客时输入的地址。<br><img src="/images/02/github.png" alt="创建一个仓库"></p>
+<p>修改 _config.yml 文件，我是用notepad++打开的，当然直接用notepad记事本也可以。代码照着写就行，记得每个冒号后加空格。<br><img src="/images/02/config.png"></p>
+<p>命令行执行 hexo d 命令，实现部署。记得把你的账户设置为公开。不然会报错。</p>
+<hr>
+<p>至于皮肤主题的更改，文章的书写，图片及视频的插入。就放到下一个篇叭。<br><img src="/images/02/ox.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/26/%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" data-id="ck28gdf4300017gtk1txt84xw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-My-name-is-CowryGao" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/25/My-name-is-CowryGao/" class="article-date">
+  <time datetime="2019-10-25T12:14:39.000Z" itemprop="datePublished">2019-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/25/My-name-is-CowryGao/">My name is CowryGao</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这里是CowryGao的第一个博客，希望在这里能和大家分享一些学习所得。</p>
+<p>首先，先自我介绍一下吧。目前，我是一个就读于某不知名大学的大二学生。突然觉得应该好好学习了。于是，希望在这里，记录下一些所得，作为笔记，也是作为一种激励吧。此博客会写一些编程语言，网络及操作系统的知识，当然，更新进度就是本人的学习进度啦；此外，一些采坑日常，也会在这里与大家分享。希望这些笔记可以帮助到你们，以及以后的自己。</p>
+<p>作为一只小白，我所分享内容如果出现了一些错误，还欢迎大佬们指正。<br>我的QQ：1105688813</p>
+<img src="/images/01/introduce.jpg" alt="Let's Go.">
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/25/My-name-is-CowryGao/" data-id="ck28gdf3l00007gtkfpdq8o79" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/26/%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">用Hexo搭建一个静态博客框架</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/25/My-name-is-CowryGao/">My name is CowryGao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
